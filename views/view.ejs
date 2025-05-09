@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+  <main>
+    <div class="viewbook-container">
+      <div class="info-container">
+        <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="Cover of <%= book.title %> ">
+  
+        <div class="details-container">
+          <h3> <%= book.title %> </h3>
+          <p>By <%= book.author %> </p>
+    
+            <p class="rating"> <%= book.rating %> / 10</p>
+            <p class="date-read">Read on  <%= book.date_read %></p>
+            <div class="buttons-container">
+              <a href="/edit/<%= book.isbn %>">Edit</a>              
+              <a href="/delete/<%= book.isbn %>">Delete</a>
+            </div>
+        </div>
+      </div>
+  
+      <div class="summary-container">
+        <h3>Summary</h3>
+        <p> <%= book.summary %></p>
+      </div>
+  
+      <div class="notes-container">
+        <h3>Notes</h3>
+        <p><%= book.notes %> </p>
+      </div>
+    </div>
+  </main>
+  </body>
+</html>

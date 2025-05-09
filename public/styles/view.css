@@ -1,0 +1,37 @@
+.viewbook-container {
+  width: 90%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-container {
+  display: flex;
+  gap: 100px;
+}
+.details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-container, .notes-container {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.details-container a {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+}

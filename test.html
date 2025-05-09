@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      background-color: grey;
+    }
+    .search-container button {
+      width: 50%;
+      margin-bottom: 5px;
+    }
+
+    .search-container input {
+      margin-top: 5px;
+      padding: 5px;
+      width: 80%;
+    }
+    .add-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      background-color: grey;
+      border-radius: 5px;
+    }
+
+    .book-card {
+      background-color: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      text-decoration: unset;
+      text-emphasis: unset;
+      color: black;
+    }
+
+    .book-card h3 {
+      margin-bottom: 0px;
+    }
+    .book-card p {
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    .books-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .extra-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .extra-info * {
+      margin: 0px;
+      padding: 0px;
+      font-size: small;
+    }
+    .date-read, .rating {
+      color: grey;
+    }
+
+
+    .addbook-container {
+      height: 100vh;
+      width: 90%;
+      margin: 5%;
+    }
+
+    .addbook-container h2 {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .addbook-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+    .addbook-container form label {
+      font-weight: bold;
+    }
+    .addbook-container form input, .addbook-container form textarea {
+      padding: 5px;
+    }
+
+    .addbook-container form textarea {
+      height: 200px;
+    }
+    .addbook-container form button {
+      padding: 5px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .addbook-container form button:hover {
+      background-color: #555;
+    }
+
+    .viewbook-container {
+      width: 90%;
+      margin: 5%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-container {
+      display: flex;
+      gap: 100px;
+    }
+    .details-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary-container, .notes-container {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+    
+    .buttons-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .details-container a {
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WeBook</h1>
+    <nav>
+      <ul>
+        <div class="add-container">
+          <li> <a id="addBookBtn" href="/add" >Add a Book</a></li>
+        </div>
+          <form action="/search" method="GET" class="search-container">
+            <input type="text" placeholder="Search..." name="search">
+            <button class="full-width" type="submit">
+              Search
+            </button>
+          </form>
+      </ul> 
+
+    </nav>
+  </header>
+
+  <div class="books-container">
+    <a href="/view">
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/isbn/1847941834-M.jpg" alt="Cover of The Power of Habit">
+        <h3>The Power of Habit</h3>
+        <p>By Charles Duhigg</p>
+        <div class="extra-info">
+          <p class="rating"> 9 / 10</p>
+          <p class="date-read">Read on 20/02/25</p>
+        </div>
+      </div>
+    </a>
+    <div class="book-card">
+      <img src="https://covers.openlibrary.org/b/isbn/1847941834-M.jpg" alt="Cover of The Power of Habit">
+      <h3>The Power of Habit</h3>
+      <p>By Charles Duhigg</p>
+      <div class="extra-info">
+        <p class="rating"> 9 / 10</p>
+        <p class="date-read">Read on 20/02/25</p>
+      </div>
+    </div>
+    <div class="book-card">
+      <img src="https://covers.openlibrary.org/b/isbn/1847941834-M.jpg" alt="Cover of The Power of Habit">
+      <h3>The Power of Habit</h3>
+      <p>By Charles Duhigg</p>
+      <div class="extra-info">
+        <p class="rating"> 9 / 10</p>
+        <p class="date-read">Read on 20/02/25</p>
+      </div>
+    </div>
+    <div class="book-card">
+      <img src="https://covers.openlibrary.org/b/isbn/1847941834-M.jpg" alt="Cover of The Power of Habit">
+      <h3>The Power of Habit</h3>
+      <p>By Charles Duhigg</p>
+      <div class="extra-info">
+        <p class="rating"> 9 / 10</p>
+        <p class="date-read">Read on 20/02/25</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="viewbook-container">
+    <div class="info-container">
+      <img src="https://covers.openlibrary.org/b/isbn/1847941834-M.jpg" alt="Cover of The Power of Habit">
+
+      <div class="details-container">
+        <h3>The Power of Habit</h3>
+        <p>By Charles Duhigg</p>
+  
+          <p class="rating"> 9 / 10</p>
+          <p class="date-read">Read on 20/02/25</p>
+          <div class="buttons-container">
+            <form action="/edit" method="get">
+              <button type="submit">Edit</button>
+            </form>
+            <form action="/delete" method="post">
+              <input type="text" name="isbn" value="<%= book.isbn %>" hidden>
+              <button type="submit">Delete</button>
+            </form>
+            <a href="/edit/<%= book.isbn %>">Edit</a>              
+            <a href="/delete/<%= book.isbn %>">Delete</a>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="summary-container">
+      <h3>Summary</h3>
+      <p>Why do we do what we do? Charles Duhigg explains the science behind habits and how we can change them.</p>
+    </div>
+
+    <div class="notes-container">
+      <h3>Notes</h3>
+      <p>Great book, would recommend to anyone looking to change their habits.</p>
+    </div>
+
+
+
+  </div>
+
+  
+  <div class="addbook-container">
+    <h2>Add a Book</h2>
+    <form action="/add" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" required>
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" required>
+      <label for="isbn">ISBN:</label>
+      <input type="text" name="isbn" id="isbn" required>
+      <label for="rating">Rating:</label>
+      <input type="number" name="rating" id="rating" required>
+      <label for="date_read">Date Read:</label>
+      <input type="date" name="date_read" id="date_read" required>
+
+      <label for="summary">Add a quick summary:</label>
+      <textarea name="summary" id="summary" required></textarea>
+
+      <label for="notes">Add your notes</label>
+      <textarea name="notes" id="notes" required></textarea>
+
+      <button type="submit">Add Book</button>
+
+    </form>
+  </div>
+
+
+</body>
+</html>

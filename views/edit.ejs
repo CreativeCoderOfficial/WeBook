@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+  <main>
+    <div class="viewbook-container">
+      <div class="info-container">
+        <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="Cover of <%= book.title %> ">
+  
+        <div class="details-container">
+          <h2>Edit <%= book.title %> </h3>
+          <p>By <%= book.author %> </p>
+          <p>ISBN: <%= book.isbn %> </p>
+          <% let full_date = book.date_read.toString();
+                 const sliced_date = full_date.slice(3,16)  %>
+          <p>Date read: <%= sliced_date %></p>
+        </div>
+      </div>
+
+    <div class="addbook-container">
+      <form action="/edit/<%= book.isbn %>" method="POST">
+        <label for="rating">Rating:</label>
+        <input type="text" name="rating" id="rating" value="<%= book.rating %>">
+  
+        <label for="summary">Add a quick summary:</label>
+        <textarea name="summary" id="summary">
+          <%= book.summary %>
+        </textarea>
+  
+        <label for="notes">Add your notes</label>
+        <textarea name="notes" id="notes" >
+          <%= book.notes %>
+        </textarea>
+  
+        <button type="submit">Add Book</button>
+   
+      </form>
+    </div>
+  </main>
+  </body>
+</html>

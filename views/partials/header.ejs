@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/add.css" />
+    <link rel="stylesheet" href="/styles/view.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>WeBook</h1></a>
+      <nav>
+        <ul>
+          <div class="add-container">
+            <li><a id="addBookBtn" href="/add">Add a Book</a></li>
+          </div>
+
+          <form action="/search" method="GET" class="search-container">
+            <input id="searchInput" type="text" placeholder="Search..." name="search" />
+            <div class="radio-selection-container">
+              <label for="searchBy">Search By:</label> 
+                
+              <input type="radio" name="searchBy" value="title" checked> Title
+              <input type="radio" name="searchBy" value="rating"> Rating
+              <input type="radio" name="searchBy" value="date_read"> Date Read
+            </div>
+
+            <button class="full-width" type="submit">Search</button>
+          </form>
+        </ul>
+      </nav>
+    </header>
+

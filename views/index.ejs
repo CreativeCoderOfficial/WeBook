@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+  <main>
+    <div class="books-container">
+      <% books.forEach(function(book) { %>
+        <a href="/view/<%= book.isbn %>">
+          <div class="book-card">
+            <img
+              src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg"
+              alt="Cover of <%= book.title %>"
+            />
+            <h3><%= book.title %></h3>
+            <p>Author: <%= book.author %></p>
+  
+              <div class="extra-info">
+              <p class="rating"> <%= book.rating %> / 10 </p>
+              <% let full_date = book.date_read.toString();
+                 const sliced_date = full_date.slice(3,16)  %>
+              <p class="date-read">Read on <%= sliced_date %></p>
+            </div>
+  
+          </div>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </main>
+    <script>
+    const searchInput = document.getElementById("searchInput");
+    const radioButtons = document.querySelectorAll('input[name="searchBy"]');
+
+    radioButtons.forEach((radio) => {
+      radio.addEventListener("change", () => {
+        if (radio.value === "date_read" && radio.checked) {
+          searchInput.type = "date";
+          searchInput.placeholder = ""; // optional, clears the text placeholder
+        } else if (radio.checked) {
+          searchInput.type = "text";
+          searchInput.placeholder = "Search...";
+        }
+      });
+    });
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+.addbook-container {
+  height: 100vh;
+  width: 90%;
+  margin: 5%;
+}
+.addbook-container h2 {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.addbook-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.addbook-container form label {
+  font-weight: bold;
+}
+.addbook-container form input, .addbook-container form textarea {
+  padding: 5px;
+}
+
+.addbook-container form textarea {
+  height: 200px;
+}
+.addbook-container form button {
+  padding: 5px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.addbook-container form button:hover {
+  background-color: #555;
+}
+
